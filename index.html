@@ -35,9 +35,19 @@
             top: 0;
             left: 0;
             width: 110%;
-            height: 100%;
-            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 1) 70%);
+            height: 120%;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 1) 110%);
         }
+        .gradient1 {
+            z-index: -1;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 110%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 1) 110%);
+        }
+
 
 
         .entete {
@@ -66,7 +76,7 @@
             width: 30%;
 
         }
-      
+
         .affiche {
             position: relative;
             top: 10vh;
@@ -84,15 +94,16 @@
 
         }
 
-  #playButton {
-    width: 80px;
-    background: transparent;
-    border: none;
-  
-  }
-  #pauseIcon{
-    display: none;
-  }
+        #playButton {
+            width: 80px;
+            background: transparent;
+            border: none;
+
+        }
+
+        #pauseIcon {
+            display: none;
+        }
 
 
         #reseaux-sociaux img {
@@ -204,7 +215,7 @@
         }
 
 
-        Large devices (desktops, 992px and up)
+        /* Large devices (desktops, 992px and up)*/
         @media screen and (min-width: 992px) {
 
             body {
@@ -219,20 +230,20 @@
     <main class="container d-flex  flex-column justify-content-between">
         <!-- <label class="text-white" id="compte"></label> -->
 
-    
+        <div class="gradient"></div>
 
         <body>
             <div class="entete">
-                <div class="gradient"></div>
+               
                 <img src="starisland.png" alt="logo">
                 <audio id="myAudio" src="audio.mp3"></audio>
 
                 <button id="playButton" onclick="toggleAudio()">
                     <img id="playIcon" src="haut-parleur.png" alt="Play">
                     <img id="pauseIcon" src="pause.png" alt="Pause">
-                  </button>
-                
-                
+                </button>
+
+
 
                 <div class="titre">
                     <h1>Star Island</h1>
@@ -243,7 +254,6 @@
                 </div>
             </div>
             <div class="affiche">
-
                 <label class="text-white" id="jour"></label>
                 <label class="text-white" id="heure"></label>
                 <label class="text-white" id="min"></label>
@@ -253,6 +263,7 @@
 
 
             <div class="reseauSociaux">
+                <div class="gradient1"></div>
                 <div class="box">
                     <input type="checkbox" id="checkbox">
                     <!--checkbox-->
@@ -339,21 +350,21 @@
 
         Rebour();
         function toggleAudio() {
-  const audio = document.getElementById("myAudio");
-  const playButton = document.getElementById("playButton");
-  const playIcon = document.getElementById("playIcon");
-  const pauseIcon = document.getElementById("pauseIcon");
+            const audio = document.getElementById("myAudio");
+            const playButton = document.getElementById("playButton");
+            const playIcon = document.getElementById("playIcon");
+            const pauseIcon = document.getElementById("pauseIcon");
 
-  if (audio.paused) {
-    audio.play();
-    playIcon.style.display = "none";
-    pauseIcon.style.display = "inline";
-  } else {
-    audio.pause();
-    playIcon.style.display = "inline";
-    pauseIcon.style.display = "none";
-  }
-}
+            if (audio.paused) {
+                audio.play();
+                playIcon.style.display = "none";
+                pauseIcon.style.display = "inline";
+            } else {
+                audio.pause();
+                playIcon.style.display = "inline";
+                pauseIcon.style.display = "none";
+            }
+        }
 
     </script>
 </body>
