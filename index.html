@@ -25,10 +25,20 @@
 
             background-image: url('predation.png');
             background-repeat: no-repeat;
-            height: 100vh;
-
+            height: 80vh;
 
         }
+
+        .gradient {
+            z-index: -1;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 120%;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 1) 70%);
+        }
+
 
         .entete {
             position: relative;
@@ -42,7 +52,7 @@
         .entete p {
             padding: 1rem;
             text-align: center;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
 
         }
 
@@ -56,7 +66,7 @@
             width: 30%;
 
         }
-
+      
         .affiche {
             position: relative;
             top: 10vh;
@@ -74,36 +84,29 @@
 
         }
 
-        .gradient {
-            position: absolute;
-            width: 100%;
-            height: 150%;
-            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 1) 100%);
-        }
-
-        .gradient #reseaux-sociaux {
-            position: relative;
-            top: 10vh;
-            margin-left: auto;
-            margin-right: auto;
-        }
+  #playButton {
+    width: 80px;
+    background: transparent;
+    border: none;
+  
+  }
 
 
 
         #reseaux-sociaux img {
             position: absolute;
-            bottom: -20vh;
+            bottom: -10vh;
             left: 45vw;
             transition: all 2s;
         }
 
         .reseauSociaux {
             position: relative;
-            top: 10vh;
+            top: 15vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 20vh;
+            height: 10vh;
         }
 
         .box {
@@ -116,7 +119,7 @@
             appearance: none;
             -moz-appearance: none;
             -webkit-appearance: none;
-            
+
             cursor: pointer;
             outline: none;
             position: relative;
@@ -144,7 +147,7 @@
         }
 
         #checkbox:checked::before {
-            content:url('fermer.png');
+            content: url('fermer.png');
             background: white;
             background: transparent;
 
@@ -200,30 +203,40 @@
 
 
         /* Large devices (desktops, 992px and up)*/
-        @media screen and (min-width: 992px) 
-        {
+        @media screen and (min-width: 992px) {
 
-        body{
-            background-size: cover;
+            body {
+                background-size: cover;
+            }
         }
-    }
     </style>
 
 
 
 
-    <main>
+    <main class="container d-flex  flex-column justify-content-between">
         <!-- <label class="text-white" id="compte"></label> -->
-        <div class="container d-flex  flex-column justify-content-between">
+
+        <div class="gradient"></div>
+
+        <body>
             <div class="entete">
 
-
                 <img src="starisland.png" alt="logo">
+                <audio id="myAudio" src="audio.mp3"></audio>
+
+                <button id="playButton" onclick="toggleAudio()">
+                    <img id="playIcon" src="haut-parleur.png" alt="Play">
+                    <img id="pauseIcon" src="pause.png" alt="Pause">
+                  </button>
+                
+                
 
                 <div class="titre">
                     <h1>Star Island</h1>
-                    <p>Plongez dans l'univers captivant de Star'Island, un serveur de jeu gratuit et en mode freetoplay
-                        ! <br />Bienvenue dans l'univers de Star'Island, où le divertissement et l'action ne connaissent
+                    <p>Plongez dans l'univers captivant de Star'Island, un serveur de jeu gratuit et en mode freetoplay!
+                        Rejoignez une communauté passionnée et vivez des aventures palpitantes dans un monde inspiré de
+                        GTA 5.Bienvenue dans l'univers de Star'Island, où le divertissement et l'action ne connaissent
                         aucune limite</p>
                 </div>
             </div>
@@ -289,7 +302,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </body>
     </main>
 
 
@@ -322,7 +335,25 @@
         }
 
 
-        Rebour();</script>
+        Rebour();
+        function toggleAudio() {
+  const audio = document.getElementById("myAudio");
+  const playButton = document.getElementById("playButton");
+  const playIcon = document.getElementById("playIcon");
+  const pauseIcon = document.getElementById("pauseIcon");
+
+  if (audio.paused) {
+    audio.play();
+    playIcon.style.display = "none";
+    pauseIcon.style.display = "inline";
+  } else {
+    audio.pause();
+    playIcon.style.display = "inline";
+    pauseIcon.style.display = "none";
+  }
+}
+
+    </script>
 </body>
 
 </html>
