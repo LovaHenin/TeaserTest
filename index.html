@@ -18,35 +18,22 @@
             margin: 0;
         }
 
-        main {
 
-            max-width: 900px;
-            margin: 0 0;
-            max-height: 1000px;
-            overflow-y: auto;
-        }
 
         body {
-            position: relative;
-            background-image: url('predation.png');
-            background-size: 100% 100%;
-            background-position: center center;
+            /*empêche le défilement sur les appareils mobiles*/
+
+            background-image: url('predation2.png');
+            background-size: cover;
             background-repeat: no-repeat;
+            background-position: center;
+            overflow: hidden;
         }
 
-        .gradient {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 1) 100%);
-            z-index: -1;
-        }
 
         .entete {
             position: relative;
-            top: 5vh;
+            top: 2vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -54,7 +41,7 @@
         }
 
         .entete img {
-            width: 10rem;
+            width: 9rem;
         }
 
         #playButton {
@@ -64,7 +51,7 @@
         }
 
         #playButton img {
-            width: 3rem;
+            width: 2rem;
         }
 
         #pauseIcon {
@@ -74,8 +61,7 @@
         .entete p {
             padding: 1rem;
             text-align: center;
-            font-size: 1.2rem;
-
+            font-size: 1rem;
         }
 
         .titre {
@@ -85,7 +71,7 @@
 
         .affiche {
             position: relative;
-            top: 5vh;
+            top: 1vh;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -94,10 +80,22 @@
 
         label {
             font-family: 'Iceland', cursive;
-            font-size: 3em;
+            font-size: 2.5em;
             font-weight: bold;
             color: white;
 
+        }
+
+
+
+        .reseauSociaux {
+            position: relative;
+            top: 2vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 10vh;
+            bottom: 2vh;
         }
 
         #reseaux-sociaux img {
@@ -107,26 +105,16 @@
             transition: all 2s;
         }
 
-        .reseauSociaux {
-            position: relative;
-            top: 9vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 10vh;
-        }
-
         .box {
             display: flex;
         }
 
         #checkbox {
-            width: 50px;
-            height: 50px;
+            width: 3.125rem;
+            height: 3.125rem;
             appearance: none;
             -moz-appearance: none;
             -webkit-appearance: none;
-
             cursor: pointer;
             outline: none;
             position: relative;
@@ -155,7 +143,6 @@
 
         #checkbox:checked::before {
             content: url('fermer.png');
-            background: white;
             background: transparent;
 
         }
@@ -208,17 +195,31 @@
             color: #cb4cd4;
         }
 
-        /* Large devices (desktops, 992px and up)*/
-        @media screen and (min-width: 992px) {}
+        /* Styles spécifiques aux appareils de taille supérieure */
+        @media (min-width: 768px) {
+            body {
+                overflow: auto;
+            }
+            .entete p {
+            padding: 2rem;
+           
+            font-size: 1.5rem;
+        }
+        label {
+         
+            font-size: 3em;
+          
+
+        }
+        }
     </style>
 
 
 
 
-    <main class="container d-flex  flex-column justify-content-between">
-        <!-- <label class="text-white" id="compte"></label> -->
+    <main class="min-vh-100 d-flex  flex-column justify-content-around">
+        <!-- min-vh-100 couvre le body -->
 
-        <div class="gradient"></div>
 
 
         <div class="entete">
@@ -237,7 +238,7 @@
                 <h1>Star Island</h1>
                 <p>Plongez dans l'univers captivant de Star'Island, un serveur de jeu gratuit et en mode freetoplay!
                     Rejoignez une communauté passionnée et vivez des aventures palpitantes dans un monde inspiré de
-                    GTA 5.Bienvenue dans l'univers de Star'Island, où le divertissement et l'action ne connaissent
+                    GTA 5. Bienvenue dans l'univers de Star'Island, où le divertissement et l'action ne connaissent
                     aucune limite</p>
             </div>
         </div>
