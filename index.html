@@ -16,39 +16,31 @@
     <style>
         * {
             margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            text-decoration: none;
+        }
+
+        main {
+
+            max-width: 900px;
+            margin: 0 0;
+            max-height: 1000px;
+            overflow-y: auto;
         }
 
         body {
 
             background-image: url('predation.png');
+            background-size: 100% 100%;
+            background-position: center center;
             background-repeat: no-repeat;
-            height: 100vh;
-
         }
 
         .gradient {
-            z-index: -1;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 110%;
-            height: 120%;
-            background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 1) 110%);
-        }
-        .gradient1 {
-            z-index: -1;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 110%;
+            position: relative;
+            width: 100%;
             height: 100%;
-            background: linear-gradient(180deg, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 1) 110%);
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 1) 100%);
+            z-index: -1;
         }
-
-
 
         .entete {
             position: relative;
@@ -57,6 +49,24 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+        }
+
+        .entete img {
+            width: 10rem;
+        }
+
+        #playButton {
+            background: transparent;
+            border: none;
+
+        }
+
+        #playButton img {
+            width: 3rem;
+        }
+
+        #pauseIcon {
+            display: none;
         }
 
         .entete p {
@@ -71,15 +81,9 @@
             text-align: center;
         }
 
-        .entete img {
-
-            width: 30%;
-
-        }
-
         .affiche {
             position: relative;
-            top: 10vh;
+            top: 5vh;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -94,18 +98,6 @@
 
         }
 
-        #playButton {
-            width: 80px;
-            background: transparent;
-            border: none;
-
-        }
-
-        #pauseIcon {
-            display: none;
-        }
-
-
         #reseaux-sociaux img {
             position: absolute;
             bottom: -10vh;
@@ -115,7 +107,7 @@
 
         .reseauSociaux {
             position: relative;
-            top: 15vh;
+            top: 9vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -214,14 +206,8 @@
             color: #cb4cd4;
         }
 
-
         /* Large devices (desktops, 992px and up)*/
-        @media screen and (min-width: 992px) {
-
-            body {
-                background-size: cover;
-            }
-        }
+        @media screen and (min-width: 992px) {}
     </style>
 
 
@@ -234,7 +220,7 @@
 
         <body>
             <div class="entete">
-               
+
                 <img src="starisland.png" alt="logo">
                 <audio id="myAudio" src="audio.mp3"></audio>
 
@@ -263,7 +249,7 @@
 
 
             <div class="reseauSociaux">
-                <div class="gradient1"></div>
+
                 <div class="box">
                     <input type="checkbox" id="checkbox">
                     <!--checkbox-->
