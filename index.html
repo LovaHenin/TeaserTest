@@ -27,7 +27,7 @@
         }
 
         body {
-
+            position: relative;
             background-image: url('predation.png');
             background-size: 100% 100%;
             background-position: center center;
@@ -35,7 +35,9 @@
         }
 
         .gradient {
-            position: relative;
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
             background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 1) 100%);
@@ -218,90 +220,90 @@
 
         <div class="gradient"></div>
 
-        <body>
-            <div class="entete">
 
-                <img src="starisland.png" alt="logo">
-                <audio id="myAudio" src="audio.mp3"></audio>
+        <div class="entete">
 
-                <button id="playButton" onclick="toggleAudio()">
-                    <img id="playIcon" src="haut-parleur.png" alt="Play">
-                    <img id="pauseIcon" src="pause.png" alt="Pause">
-                </button>
+            <img src="starisland.png" alt="logo">
+            <audio id="myAudio" src="audio.mp3"></audio>
+
+            <button id="playButton" onclick="toggleAudio()">
+                <img id="playIcon" src="haut-parleur.png" alt="Play">
+                <img id="pauseIcon" src="pause.png" alt="Pause">
+            </button>
 
 
 
-                <div class="titre">
-                    <h1>Star Island</h1>
-                    <p>Plongez dans l'univers captivant de Star'Island, un serveur de jeu gratuit et en mode freetoplay!
-                        Rejoignez une communauté passionnée et vivez des aventures palpitantes dans un monde inspiré de
-                        GTA 5.Bienvenue dans l'univers de Star'Island, où le divertissement et l'action ne connaissent
-                        aucune limite</p>
+            <div class="titre">
+                <h1>Star Island</h1>
+                <p>Plongez dans l'univers captivant de Star'Island, un serveur de jeu gratuit et en mode freetoplay!
+                    Rejoignez une communauté passionnée et vivez des aventures palpitantes dans un monde inspiré de
+                    GTA 5.Bienvenue dans l'univers de Star'Island, où le divertissement et l'action ne connaissent
+                    aucune limite</p>
+            </div>
+        </div>
+        <div class="affiche">
+            <label class="text-white" id="jour"></label>
+            <label class="text-white" id="heure"></label>
+            <label class="text-white" id="min"></label>
+            <label class="text-white" id="sec"></label>
+
+        </div>
+
+
+        <div class="reseauSociaux">
+
+            <div class="box">
+                <input type="checkbox" id="checkbox">
+                <!--checkbox-->
+                <!--Menu-->
+                <div class="menu">
+                    <a href="#">
+                        <div class="menuItems">
+                            <i class="fab fa-whatsapp"></i>
+
+                        </div>
+
+                    </a>
+                    <a href="#">
+                        <div class="menuItems">
+                            <i class="fab fa-instagram"></i>
+
+                        </div>
+
+                    </a>
+
+                    <a href="#">
+                        <div class="menuItems">
+                            <i class="fab fa-facebook"></i>
+
+                        </div>
+
+                    </a>
+                    <a href="#">
+                        <div class="menuItems">
+                            <i class="fab fa-twitter"></i>
+
+                        </div>
+
+                    </a>
+                    <a href="#">
+                        <div class="menuItems">
+                            <i class="fab fa-discord"></i>
+
+                        </div>
+
+                    </a>
+                    <a href="#">
+                        <div class="menuItems">
+                            <i class="fab fa-linkedin"></i>
+
+                        </div>
+
+                    </a>
                 </div>
             </div>
-            <div class="affiche">
-                <label class="text-white" id="jour"></label>
-                <label class="text-white" id="heure"></label>
-                <label class="text-white" id="min"></label>
-                <label class="text-white" id="sec"></label>
+        </div>
 
-            </div>
-
-
-            <div class="reseauSociaux">
-
-                <div class="box">
-                    <input type="checkbox" id="checkbox">
-                    <!--checkbox-->
-                    <!--Menu-->
-                    <div class="menu">
-                        <a href="#">
-                            <div class="menuItems">
-                                <i class="fab fa-whatsapp"></i>
-
-                            </div>
-
-                        </a>
-                        <a href="#">
-                            <div class="menuItems">
-                                <i class="fab fa-instagram"></i>
-
-                            </div>
-
-                        </a>
-
-                        <a href="#">
-                            <div class="menuItems">
-                                <i class="fab fa-facebook"></i>
-
-                            </div>
-
-                        </a>
-                        <a href="#">
-                            <div class="menuItems">
-                                <i class="fab fa-twitter"></i>
-
-                            </div>
-
-                        </a>
-                        <a href="#">
-                            <div class="menuItems">
-                                <i class="fab fa-discord"></i>
-
-                            </div>
-
-                        </a>
-                        <a href="#">
-                            <div class="menuItems">
-                                <i class="fab fa-linkedin"></i>
-
-                            </div>
-
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </body>
     </main>
 
 
